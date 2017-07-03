@@ -1,0 +1,53 @@
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    /* Set the fixed height of the footer here */
+    line-height: 0px;
+}
+
+a,
+a:focus,
+a:hover,
+a:visited,
+a:active {
+    text-decoration: none;
+}
+
+body {
+    text-align: center;
+}
+
+.input-group {
+    margin: auto;
+}
+
+h2 {
+    margin-top: 210px;
+    margin-bottom: 10px;
+}
+
+h2,
+input {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.output {
+    margin-top: 10px;
+}
+
+#info {
+    margin: auto;
+}
+
+@media (min-width: 768px) {
+    .input-group {
+        width: 45%;
+    }
+}
+
+@media (min-width: 1024px) {
+    .input-group {
+        width: 35%;
+    }
+}
