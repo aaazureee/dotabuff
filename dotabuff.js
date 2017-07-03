@@ -8,8 +8,7 @@ $(() => {
             return false;
         }
     });
-    $("#test").click(e => {
-        e.preventDefault();
+    $("#test").click(() => {
         var div = "<div id='info'><img alt='loading' src='https://media.giphy.com/media/y1ZBcOGOOtlpC/giphy.gif'></div>";
         $(".output").html(div);
         var custom_id = $("input").val();
@@ -25,6 +24,8 @@ $(() => {
                     } else {
                         var id_32bit = convert(id_64bit);
                         $(".output").html(`<a href = "https://www.dotabuff.com/players/${id_32bit}">Dotabuff</a>`);
+                        $("a").attr("target", "_blank");
+
                     }
                 });
         } else {
@@ -38,6 +39,8 @@ $(() => {
                     } else {
                         var id_32bit = convert(custom_id);
                         $(".output").html(`<a href = "https://www.dotabuff.com/players/${id_32bit}">Dotabuff</a>`);
+                        $("a").attr("target", "_blank");
+
                     }
                 });
         }
