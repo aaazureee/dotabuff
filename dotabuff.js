@@ -11,10 +11,17 @@ $(() => {
     $("#test").click(() => {
         var div = "<div id='info'><img alt='loading' src='https://media.giphy.com/media/y1ZBcOGOOtlpC/giphy.gif'></div>";
         $(".output").html(div);
-        var custom_id = $("input").val();
-        if (isNaN(custom_id)) {
+        var input = $("input").val();
+        // https/...../
+        if (input.slice(-1) === '/') {
+            input = input.slice(0, -1).replace(/.*\//, "");
+        } else if (input.includes('/')) {
+            input = input.replace(/.*\//, "");
+        }
+
+        if (isNaN(input)) {
             $.ajax({
-                    url: `https://cors-anywhere.herokuapp.com/https://api.steampowered.com/ISteamUser/ResolveVanityURL/v0001/?key=${api_key}&vanityurl=${custom_id}`,
+                    url: `https://cors-anywhere.herokuapp.com/https://api.steampowered.com/ISteamUser/ResolveVanityURL/v0001/?key=${api_key}&vanityurl=${input}`,
                     dataType: 'json'
                 })
                 .done(data => {
@@ -24,23 +31,23 @@ $(() => {
                     } else {
                         var id_32bit = convert(id_64bit);
                         $(".output").html(`<a href = "https://www.dotabuff.com/players/${id_32bit}">Dotabuff</a>`);
-                        $(".output").append(`<br><a href = "https://www.steamcommunity.com/profiles/${id_64bit}">Steam</a>`);
+                        $(".output").append(`<br>   <a href = "https://www.steamcommunity.com/profiles/${id_64bit}">Steam</a>`);
                         $("a").attr("target", "_blank");
 
                     }
                 });
         } else {
             $.ajax({
-                    url: `https://cors-anywhere.herokuapp.com/http://api.steampowered.com/ISteamUser/GetPlayerSummaries/v0002/?key=${api_key}&steamids=${custom_id}`,
+                    url: `https://cors-anywhere.herokuapp.com/http://api.steampowered.com/ISteamUser/GetPlayerSummaries/v0002/?key=${api_key}&steamids=${input}`,
                     dataType: 'json'
                 })
                 .done(data => {
                     if (!data.response.players[0]) {
                         $(".output").html(`Not found 4Head`);
                     } else {
-                        var id_32bit = convert(custom_id);
+                        var id_32bit = convert(input);
                         $(".output").html(`<a href = "https://www.dotabuff.com/players/${id_32bit}">Dotabuff</a>`);
-                        $(".output").append(`<br><a href = "https://www.steamcommunity.com/profiles/${custom_id}">Steam</a>`);
+                        $(".output").append(`<br><a href = "https://www.steamcommunity.com/profiles/${input}">Steam</a>`);
                         $("a").attr("target", "_blank");
 
                     }
