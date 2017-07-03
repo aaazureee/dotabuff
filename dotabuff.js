@@ -31,7 +31,6 @@ $(() => {
                     } else {
                         var id_32bit = convert(id_64bit);
                         $(".output").html(`<a href = "https://www.dotabuff.com/players/${id_32bit}">Dotabuff</a>`);
-                        $(".output").append(`<br>   <a href = "https://www.steamcommunity.com/profiles/${id_64bit}">Steam</a>`);
                         $("a").attr("target", "_blank");
 
                     }
@@ -47,7 +46,6 @@ $(() => {
                     } else {
                         var id_32bit = convert(input);
                         $(".output").html(`<a href = "https://www.dotabuff.com/players/${id_32bit}">Dotabuff</a>`);
-                        $(".output").append(`<br><a href = "https://www.steamcommunity.com/profiles/${input}">Steam</a>`);
                         $("a").attr("target", "_blank");
 
                     }
