@@ -22,9 +22,11 @@ body {
     margin: auto;
 }
 
-h2 {
-    margin-top: 210px;
-    margin-bottom: 10px;
+img[alt="logo"] {
+    margin-top: 120px;
+    margin-bottom: 20px;
+    width: 150px;
+    height: auto;
 }
 
 h2,
