@@ -1,9 +1,9 @@
 .footer {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    /* Set the fixed height of the footer here */
-    line-height: 0px;
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	/* Set the fixed height of the footer here */
+	line-height: 0px;
 }
 
 a,
@@ -11,46 +11,46 @@ a:focus,
 a:hover,
 a:visited,
 a:active {
-    text-decoration: none;
+	text-decoration: none;
 }
 
 body {
-    text-align: center;
+	text-align: center;
 }
 
 .input-group {
-    margin: auto;
+	margin: auto;
 }
 
 img[alt="logo"] {
-    margin-top: 120px;
-    margin-bottom: 20px;
-    width: 150px;
-    height: auto;
+	margin-top: 120px;
+	margin-bottom: 20px;
+	width: 150px;
+	height: auto;
 }
 
 h2,
 input,
 button {
-    font-family: 'Montserrat', sans-serif;
+	font-family: 'Montserrat', sans-serif;
 }
 
 .output {
-    margin-top: 10px;
+	margin-top: 10px;
 }
 
 #info {
-    margin: auto;
+	margin: auto;
 }
 
 @media (min-width: 768px) {
-    .input-group {
-        width: 45%;
-    }
+	.input-group {
+		width: 45%;
+	}
 }
 
 @media (min-width: 1024px) {
-    .input-group {
-        width: 35%;
-    }
+	.input-group {
+		width: 35%;
+	}
 }
