@@ -1,9 +1,19 @@
+html {
+	min-height: 100%;
+	position: relative;
+}
+
+body {
+	margin-bottom: 20px;
+}
+
 .footer {
 	position: absolute;
 	bottom: 0;
 	width: 100%;
 	/* Set the fixed height of the footer here */
 	line-height: 0px;
+	height: 0px;
 }
 
 a,
